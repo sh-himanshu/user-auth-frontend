@@ -19,7 +19,7 @@ const Dashboard = ({ user }: DashboardProps) => {
   }, []);
 
   return (
-    <div>
+    <div className="flex h-full w-full flex-col  xl:flex-row">
       <UserTable usersArr={usersArr} setUsersArr={setUsersArr} />
       <AddUserForm setUsersArr={setUsersArr} />
     </div>

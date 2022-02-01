@@ -1,12 +1,18 @@
 import { IoPersonRemoveSharp } from "react-icons/io5";
-import { Icon, IconProps } from "@chakra-ui/react";
 
-interface DeleteUserProps extends IconProps {
+interface DeleteUserProps {
   username: string;
+  onClick: (event: React.MouseEvent<SVGElement, MouseEvent>) => void;
 }
 
-const DeleteUser = ({ username, ...props }: DeleteUserProps) => {
-  return <Icon {...props} data-username={username} as={IoPersonRemoveSharp} />;
+const DeleteUser = ({ username, onClick }: DeleteUserProps) => {
+  return (
+    <IoPersonRemoveSharp
+      data-username={username}
+      className="text-red-600"
+      onClick={onClick}
+    />
+  );
 };
 
 export default DeleteUser;
